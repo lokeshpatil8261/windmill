@@ -1,0 +1,452 @@
+  body {
+  margin: 0;
+  background: rgb(4, 15, 20);
+  overflow: hidden;
+  animation: night 50s ease-in 1s  ;
+}
+@keyframes night {
+       /* from{
+       background-color:  rgb(4, 15, 20);
+       }
+       to{
+        background-color: rgb(12, 239, 239);
+       } */
+        0%{
+          background-color:  rgb(4, 15, 20);
+        }
+         25%{
+          background-color:  rgb(4, 15, 20);
+        }
+         50%{
+          background-color:  rgb(99, 198, 244);
+        }
+         75%{
+          background-color:  rgb(99, 198, 244);
+        }
+         100%{
+          background-color:  rgb(99, 198, 244);
+        }      
+}
+.sky {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+}
+/* Clouds */
+.cloud {
+  width: 100px;
+  height: 60px;
+  background: white;
+  border-radius: 50%;
+  position: absolute;
+  box-shadow: 30px 20px white, 60px 0 white, 90px 15px white;
+  top: 10%;
+}
+.cloud1 {
+  animation: moveRight 20s linear infinite;
+}
+.cloud2 {
+  top: 15%;
+  animation: moveLeft 25s linear infinite;
+}
+.cloud3 {
+  top: 20%;
+  animation: moveRight 30s linear infinite;
+  /* animation-delay: 2s; */
+}
+@keyframes moveRight {
+  0% { left: -200px; }
+  100% { left: 100vw; }
+}
+@keyframes moveLeft {
+  0% { left: 100vw; }
+  100% { left: -200px; }
+}
+/* Windmill structure */
+.windmill {
+  position: absolute;
+  bottom: 50px;
+  width: 100px;
+  height: 250px;
+}
+.tower {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 20px;
+  height: 150px;
+  /* background: #888; */
+   border-left: 1rem solid transparent;
+    border-right: 1rem solid transparent;
+    border-bottom: 12rem solid rgb(25, 25, 224); 
+}
+.blades {
+  position: absolute;
+  bottom: 180px;
+  left: 50%;
+   transform: translateX(-50%); 
+  width: 80px;
+  height: 80px;
+  animation: spin 3s linear infinite;
+} 
+.blade {
+  position: absolute;
+    /* width: 10px;
+  height: 40px;  
+  background: rgb(104, 83, 83);   */
+  top: 0;
+  left: 50%;
+    transform-origin: bottom center;  
+     border-left: 0.3rem solid transparent;
+    border-right: 0.3rem solid transparent;
+    border-bottom: 3rem solid rgb(108, 107, 107);  
+}
+.blade:nth-child(1) { transform: rotate(0deg) translateY(-50%); }
+.blade:nth-child(2) { transform: rotate(90deg)  translateY(-50%); }
+.blade:nth-child(3) { transform: rotate(180deg) translateY(-50%);  }
+.blade:nth-child(4) { transform: rotate(270deg) translateY(-50%);  }
+
+  @keyframes spin {
+  0% { transform: translateX(-50%) rotate(0deg); }
+  100% { transform:  translateX(-50%) rotate(360deg); } 
+} 
+/* @keyframes spin {
+  0% { transform: translateX(-100%)  rotate(0deg); }
+  100% { transform: translateX(-100%) rotate(360deg); }
+} */
+.grass{
+  width: 100%;
+  height: 4rem;
+  background-color: green;
+  position: absolute;
+  bottom: 0;
+}
+.sun{
+  width: 5rem;
+  height: 5rem;
+  background-color: rgb(239, 243, 6);
+  border-radius: 50%;
+  animation: sun 26s ease-in 25s  ;
+  position: absolute;
+  top: 1rem;
+  left: -80rem;
+  filter: blur(2px);
+}
+@keyframes sun {
+     from{
+      top: 1rem;
+      left: 0;
+     }
+     to{
+      top: 10rem;
+      left: 80rem;
+     }
+}
+.moon{
+  height: 4rem;
+  width: 4rem;
+  background-color: aliceblue;
+  border-radius: 50%;
+  position: absolute;
+  top: 3rem;
+  left: -80rem;
+  animation: sun 25s ease-in-out 1s;
+  filter: blur(2px);
+}
+@keyframes moon {
+     from{
+      top: 3rem;
+      left: -20rem;
+     } 
+     to{
+      top: 3rem;
+      left: -80rem;
+     }
+}
+.house{
+  height: 10rem;
+  width: 12rem;
+  background-color: coral;
+  position: absolute;
+  top: 23rem;
+  left: 28.8rem;
+  border: 3px solid sienna;
+}
+.upper{
+  /* height: 6rem;
+  width: 13rem;
+  background-color: rgb(108, 52, 13); */
+     width: 0;
+      height: 0;
+      position: absolute;
+       top: 18.2rem;
+      left: 28.1rem;
+      border-left: 110px solid transparent;
+      border-right: 110px solid transparent;
+      border-bottom: 80px solid rgb(156, 21, 6);
+      z-index: 2;
+}
+.door{
+  height: 5rem;
+  width: 2.5rem;
+  border: 3px solid rgb(30, 30, 25);
+  position: absolute;
+background-color:  beige;
+  top: 28rem;
+  left: 33.5rem;
+}
+.window{
+  height: 2.5rem;
+  width: 2.5rem;
+  border: 2px solid rgb(146, 146, 142);
+  background-color: beige;
+  position: absolute;
+  top: 26rem;
+  left: 37.5rem;
+}
+.window1,.window2,.window3,.window4{
+  height: 0.5rem;
+  width: 0.5rem;
+  border: 1px solid rgb(146, 146, 142);
+  background-color: beige;
+  position: absolute;
+}
+.window1{
+  top: 26.5rem;
+  left: 38rem;
+}
+.window2{
+  top: 26.5rem;
+  left: 39rem;
+}
+.window3{
+  top: 27.5rem;
+  left: 38rem;
+}
+.window4{
+  top: 27.5rem;
+  left: 39rem;
+}
+.door1{
+  height: 3rem;
+  width: 14px;
+  position: absolute;
+  top: 19.5rem;
+  left: 38rem;
+  background: #ab4040;
+}
+.circle1,.circle2,.circle3,.circle4{
+    height: 0.6rem;
+    width: 0.6rem;
+    background-color: gray;
+    border-radius: 50%;
+    position: absolute;
+}
+
+.circle1{
+     left: 38rem;
+    top: 18.9rem;
+    animation: move 4s ease-in   infinite;
+}
+@keyframes move {
+  from{
+     left: 38rem;
+    top: 18.9rem;
+  }
+  to{
+     left: 38rem;
+    top: 17.7rem;
+  }
+}
+ .circle2{
+    left: 38rem;
+    top: 18.8rem;
+     animation: move 4s ease-in   infinite;
+}
+@keyframes move {
+  from{
+     left: 38rem;
+    top: 18.8rem;
+  }
+  to{
+     left: 38rem;
+    top: 17.6rem;
+  }
+}
+ .circle3{
+    left: 38rem;
+    top: 18.7rem;
+     animation: move 1.8s ease-in   infinite;
+}
+@keyframes move {
+  from{
+     left: 38rem;
+    top: 18.7rem;
+  }
+  to{
+     left: 38rem;
+    top: 17.5rem;
+  }
+}
+ .circle4{
+    left: 38.1rem;
+    top: 19rem;
+     animation: move 2s ease-in   infinite;
+}
+@keyframes move {
+  from{
+     left: 38rem;
+    top: 19rem;
+  }
+  to{
+     left: 38rem;
+    top: 17.4rem;
+  }
+}  
+.doorcircle{
+  height: 0.6rem;
+  width: 0.6rem;
+  background-color: rgb(199, 149, 87);
+  border-radius: 50%;
+  position: absolute;
+  left: 34rem;
+  top: 30rem;
+}
+.path{
+  width: 100%;
+  height: 2.5rem;
+  background-color: black;
+  position: absolute;
+  bottom: 0.7rem;
+}
+.path1,.path2,.path3,.path4,.path5{
+  height: 5px;
+  width: 10rem;
+  background-color: gray;
+  position: absolute;
+  bottom: 1.7rem;
+}
+.path1{
+ right: 0rem;
+}
+.path2{
+ left: 0rem;
+}
+.path3{
+ left: 16rem;
+}
+.path4{
+ left: 34rem;
+}
+.path5{
+ left: 52rem;
+}
+.poll1,.poll2,.poll3,.poll4{
+  height: 4rem;
+  width: 0.6rem;
+  background-color: lightslategray;
+  position: absolute;
+  bottom: 4rem;
+}
+.poll1{
+  left: 7rem;
+}
+.poll2{
+  left: 25.5rem;
+}
+.poll3{
+  left: 55rem;
+}
+.poll4{
+left: 44rem;
+}
+.light1,.light2,.light3,.light4{
+      width: 1rem;
+      height: 1rem;
+      background-color: rgb(252, 236, 13);
+      border-radius: 50%;
+      position: absolute;
+      bottom: 7.9rem;
+}
+.light1{
+  left: 6.8rem;
+}
+.light2{
+  left: 25.3rem;
+}
+.light3{
+  left: 54.8rem;
+}
+.light4{
+  left: 43.8rem;
+}
+.mount1,.mount2{
+     width: 0;
+      height: 0;
+     border-left: 100px solid transparent;
+      border-right: 100px solid transparent;
+      border-bottom: 90px solid rgb(31, 164, 13);
+      position: absolute;
+      bottom: 4rem;
+}
+.mount1{
+  right: -3rem;
+}
+.mount2{
+  right: 3rem;
+}
+.img1{
+  width: 8rem;
+  position: absolute;
+  left: 80rem;
+  bottom: -1.2rem;
+  animation: car 15s ease-in  infinite;
+}
+@keyframes car {
+  from{
+    bottom: -1.2rem;
+    left: 79rem;
+    
+  }
+  to{
+     bottom: -1.2rem;
+     left: -10rem;
+  }
+}
+.img2{
+  width: 5rem;
+  position: absolute;
+  left: 80rem;
+  bottom: 0.4rem;
+  animation: car2 18s ease-in 5s  infinite;
+}
+@keyframes car2 {
+  from{
+    bottom: 0.4rem;
+    left: 79rem;
+    
+  }
+  to{
+     bottom: 0.4rem;
+     left: -10rem;
+  }
+}
+.img3{
+  width: 5rem;
+  position: absolute;
+  left: 80rem;
+  bottom: 0.7rem;
+  animation: car2 16s ease-in 10s  infinite;
+}
+@keyframes car2 {
+  from{
+    bottom: 0.7rem;
+    left: 79rem;
+    
+  }
+  to{
+     bottom: 0.7rem;
+     left: -10rem;
+  }
+}
